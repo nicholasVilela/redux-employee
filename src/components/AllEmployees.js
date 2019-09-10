@@ -36,16 +36,11 @@ const AllEmployees = () => {
                 {employees.map((item, i) => {
                     return (
                         <>
-                            <Link to={{
-                                pathname: `/${companyName}/${item.id}/modify_employee`,
-                                state: {fName: item.firstName, lName: item.lastName}
-                                }} >
+                            <Link to={`/${companyName}/${item.id}/details`} >
                                 <li key={i}>
                                     {item.firstName} {item.lastName}
                                 </li>
                             </Link>
-
-                            <button onClick={() => deleteEmployee(item.id)}>X</button>
                         </>
                     )
                 })}
